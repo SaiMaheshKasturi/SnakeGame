@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Snake Game";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .game-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        canvas {
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        #restartButton {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: black;
+            background-color: aqua;            
+            border-radius:12px;
+            border: 1px solid #000;
+            font-weight: bold;
+        }
+
+        #gameOverText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: black;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+        }
+
+        #scoreText {
+            position: absolute;
+            top: 60%; /* Adjust this value to position below the game over text */
+            right: 39%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: black;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+        h1{
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Snake Game</h1>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="512" height="512"></canvas>
+        <button id="restartButton">Restart Game</button>
+        <div id="gameOverText">Game Over</div>
+        <div id="scoreText">Total Score: </div>
+    </div>
+    <script src="~/js/snake.js"></script>
+</body>
+</html>
